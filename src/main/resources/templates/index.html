@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Waira</title>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav>
+        <!-- Logo de Waira -->
+        <div>
+            <img th:src="@{/imgs/Waira.svg}">
+        </div>
+        <!-- Opciones de navegación -->
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/explore">Explorar</a></li>
+            <li><a href="/about">Acerca de</a></li>
+            <li><a href="/login">Iniciar Sesión</a></li>
+            <li><a href="/register">Registrarse</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <h1>Bienvenido a Waira</h1>
+        <p>Tu ventana a las experiencias únicas de Cartagena.</p>
+        <a href="/register">Comienza tu aventura</a>
+    </main>
+    
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Waira. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
