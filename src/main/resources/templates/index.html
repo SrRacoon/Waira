@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Waira</title>
+    <link rel="stylesheet" href="/css/modals.css">
 </head>
 <body>
     <!-- Barra de navegación -->
@@ -17,8 +18,8 @@
             <li><a href="/">Inicio</a></li>
             <li><a href="/explore">Explorar</a></li>
             <li><a href="/about">Acerca de</a></li>
-            <li><a href="/login">Iniciar Sesión</a></li>
-            <li><a href="/register">Registrarse</a></li>
+            <li><a href="javascript:void(0)" onclick="abrirModal('login-modal')">Iniciar Sesión</a></li>
+            <li><a href="javascript:void(0)" onclick="abrirModal('register-modal')">Registrarse</a></li>
         </ul>
     </nav>
 
@@ -26,12 +27,16 @@
     <main>
         <h1>Bienvenido a Waira</h1>
         <p>Tu ventana a las experiencias únicas de Cartagena.</p>
-        <a href="/register">Comienza tu aventura</a>
+        <a href="javascript:void(0)" onclick="abrirModal('register-modal')">Comienza tu aventura</a>
     </main>
     
     <!-- Pie de página -->
     <footer>
         <p>&copy; 2024 Waira. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Modales de Login y Registro -->
+    <div th:replace="fragments/modals :: body"></div>
 </body>
+<script src="/js/modals.js"></script>
 </html>
