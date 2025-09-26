@@ -12,24 +12,17 @@
 
         <div id="name-group">
             <label for="name">Nombre</label>
-            <input type="text" name="name" id="name" required>
+            <input type="text" name="nombre" id="name" required>
         </div>
         
         <div id="surname-group">
             <label for="surname">Apellido</label>
-            <input type="text" name="surname" id="surname" required>
+            <input type="text" name="apellido" id="surname" required>
         </div>
 
         <div id="phone-group">
             <label for="phone">Teléfono</label>
-            <input type="tel" name="phone" id="phone" pattern="^\+?[0-9\s\-]{7,15}$" required>
-        </div>
-
-        <div id="nationality-group">
-            <label for="nationality">Nacionalidad:</label>
-            <select name="nationality" id="nationality" autocomplete="off" required>
-                <option value="">Selecciona tu nacionalidad</option>
-            </select>
+            <input type="tel" name="telefono" id="phone" pattern="^\+?[0-9\s\-]{7,15}$" required>
         </div>
 
         <div id="email-group">
@@ -56,4 +49,5 @@
         </div>
     </form>
 </body>
+<script src="/js/paises.js"></script>
 </html>
