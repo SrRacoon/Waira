@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Temporal</title>
+</head>
+<body>
+    <h1>Bienvenido</h1>
+    <p th:text="'Hola ' + ${session.usuarioLogueado.nombre}"></p>
+    <a th:href="@{/}">Inicio</a>
+    <a th:href="@{/api/logout}">Cerrar sesión</a>
+    <a th:href="@{/api/delete-account(id=${session.usuarioLogueado.id})}">Eliminar cuenta</a>
+</body>
+</html>

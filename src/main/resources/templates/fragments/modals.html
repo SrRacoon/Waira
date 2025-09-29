@@ -21,6 +21,8 @@
                     <input type="password" name="password" id="password" autocomplete="off" required>
                 </div>
 
+                <div id="login-error" style="color:red; font-size: 15px;"></div>
+
                 <!--Boton para abrir modal de registro-->
                 <div>
                     <a href="javascript:void(0)" onclick="cambiarModal('login-modal','register-modal')">¿Aún no tienes cuenta?</a>
@@ -70,8 +72,10 @@
 
                 <div id="confirm-password-group">
                     <label for="confirm_password">Confirmar Contraseña</label>
-                    <input type="password" name="confirm_password" id="confirm_password" minlength="8" autocomplete="off" required>
+                    <input type="password" name="confirmPassword" id="confirm_password" minlength="8" autocomplete="off" required>
                 </div>
+                
+                <div id="register-error" style="color:red; font-size: 15px;"></div>
 
                 <!--Boton para abrir modal de incio de sesion-->
                 <div>
@@ -85,6 +89,8 @@
             </form>
         </div>
     </div>
+
+    <script src="/js/auth.js"></script>
 
 </body>
 </html>

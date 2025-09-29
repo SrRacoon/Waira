@@ -75,15 +75,17 @@
 #login-modal button, #register-modal button {
     width: 100%;
     padding: 0.7em;
-    background: #FF802E;
+    background: #E94F37;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 1em;
     cursor: pointer;
     margin-top: 0.5em;
+    transition: 0.3s ease;
+    font-weight: bold;
 }
 
 #login-modal button:hover, #register-modal button:hover {
-    background: #f37c2c;
+    background: #FF9933;
 }
