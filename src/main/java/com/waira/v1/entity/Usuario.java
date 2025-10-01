@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "usuarios")
+@Table(name = "Usuarios")
 public abstract class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,8 +28,6 @@ public abstract class Usuario {
 
     @Enumerated(EnumType.STRING)
     private Rol rol;
-
-    // Getters y setters
 
     public Long getId() {
         return id;
@@ -83,7 +81,7 @@ public abstract class Usuario {
         return estadoCuenta;
     }
 
-        public Rol getRol() {
+    public Rol getRol() {
         return rol;
     }
 
