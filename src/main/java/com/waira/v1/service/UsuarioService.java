@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.waira.v1.dto.AdminRegisterDTO;
-import com.waira.v1.dto.LoginDTO;
 import com.waira.v1.dto.ClienteRegisterDTO;
+import com.waira.v1.dto.LoginDTO;
 import com.waira.v1.dto.ProveedorRegisterDTO;
 import com.waira.v1.entity.Admin;
 import com.waira.v1.entity.Cliente;

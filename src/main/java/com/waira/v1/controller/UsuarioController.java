@@ -41,6 +41,7 @@ public class UsuarioController {
                 case CLIENTE -> redirect = "/temporal";
             }
 
+            
             return ResponseEntity.ok(
                 Map.of(
                     "success", true,

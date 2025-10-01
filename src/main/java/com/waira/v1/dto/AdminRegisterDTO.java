@@ -1,5 +1,8 @@
 package com.waira.v1.dto;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.waira.v1.entity.enums.PermisosAdmin;
 
 public class AdminRegisterDTO {
@@ -7,7 +10,7 @@ public class AdminRegisterDTO {
     private String surname;
     private String phone;
     private String email;
-    private PermisosAdmin[] permisos;
+    private Set<PermisosAdmin> permisos = new HashSet<>();
     private String password;
     private String confirmPassword;
 
@@ -43,14 +46,14 @@ public class AdminRegisterDTO {
         this.email = email; 
     }
 
-    public PermisosAdmin[] getPermisos() { 
+    public Set<PermisosAdmin> getPermisos() { 
         return permisos; 
     }
 
-    public void setPermisos(PermisosAdmin[] permisos) { 
+    public void setPermisos(Set<PermisosAdmin> permisos) { 
         this.permisos = permisos; 
     }
-
+    
     public String getPassword() { 
         return password; 
     }
