@@ -10,4 +10,9 @@ public class TemporalController {
     public String explore() {
         return "temporal";
     }
+
+    @GetMapping("/registro-usuario")
+    public String registroUsuario() {
+        return "registro-usuario";
+    }
 }

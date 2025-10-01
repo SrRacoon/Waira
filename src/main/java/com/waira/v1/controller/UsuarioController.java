@@ -5,13 +5,18 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.waira.v1.dto.AdminRegisterDTO;
-import com.waira.v1.dto.LoginDTO;
 import com.waira.v1.dto.ClienteRegisterDTO;
+import com.waira.v1.dto.LoginDTO;
 import com.waira.v1.dto.ProveedorRegisterDTO;
 import com.waira.v1.entity.Cliente;
+import com.waira.v1.entity.Usuario;
 import com.waira.v1.service.UsuarioService;
 
 import jakarta.servlet.http.HttpSession;
@@ -26,7 +31,7 @@ public class UsuarioController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginDTO dto, HttpSession session) {
         try {
-            Cliente usuarioLogueado = (Cliente) usuarioService.login(dto);
+            Usuario usuarioLogueado = usuarioService.login(dto);
             session.setAttribute("usuarioLogueado", usuarioLogueado);
 
             String redirect = "/";

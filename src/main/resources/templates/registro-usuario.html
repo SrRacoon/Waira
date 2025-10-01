@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Temporal</title>
+    <link rel="stylesheet" href="/css/modals.css">
+</head>
+<body>
+    <a href="javascript:void(0)" onclick="abrirModal('registerCliente-modal')">Registrar Cliente</a>
+    <a href="javascript:void(0)" onclick="abrirModal('registerAdmin-modal')">Registrars Admin</a>
+
+    <div th:replace="~{fragments/modals :: body}"></div>
+    <script src="/js/modals.js"></script>
+</body>
+</html>
