@@ -6,7 +6,8 @@
 </head>
 <body>
     <h1>Bienvenido</h1>
-    <p th:text="'Hola ' + ${session.usuarioLogueado.nombre}"></p>
+    <p th:text="'Usuario: ' + ${session.usuarioLogueado.nombre}"></p>
+    <p th:text="'Rol:' + ${session.usuarioLogueado.rol}"></p>
     <a th:href="@{/}">Inicio</a>
     <a th:href="@{/api/logout}">Cerrar sesión</a>
     <a th:href="@{/api/delete-account(id=${session.usuarioLogueado.id})}">Eliminar cuenta</a>

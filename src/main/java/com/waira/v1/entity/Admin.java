@@ -10,10 +10,9 @@ import jakarta.persistence.Table;
 public class Admin extends Usuario {
     private PermisosAdmin[] permisos;
     
-    public Admin(PermisosAdmin[] permisos) {
+    public Admin() {
         super();
         this.setRol(com.waira.v1.entity.enums.Rol.ADMIN);
-        this.permisos = permisos;
     }
     
     public PermisosAdmin[] getPermisos() {

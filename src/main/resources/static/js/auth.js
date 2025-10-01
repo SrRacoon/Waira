@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login-modal form");
-    const registerForm = document.querySelector("#register-modal form");
+    const registerClienteForm = document.querySelector("#registerCliente-modal form");
 
     loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -25,13 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    registerForm.addEventListener("submit", async (e) => {
+    registerClienteForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const formData = new FormData(registerForm);
+        const formData = new FormData(registerClienteForm);
         const payload = Object.fromEntries(formData.entries());
 
-        const response = await fetch("/api/register", {
+        const response = await fetch("/api/register/cliente", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)

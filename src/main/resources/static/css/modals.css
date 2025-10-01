@@ -1,5 +1,5 @@
 /* Fondo de modales */
-#login-modal, #register-modal {
+#login-modal, #registerCliente-modal {
     display: none;
     position: fixed;
     top: 0; left: 0;
@@ -11,12 +11,12 @@
     align-items: center;
 }
 
-#login-modal.active, #register-modal.active {
+#login-modal.active, #registerCliente-modal.active {
     display: flex;
 }
 
 /* Apartir de aquí se puede modificar el estilo de los modales */
-#login-modal > div, #register-modal > div {
+#login-modal > div, #registerCliente-modal > div {
     background: #fff;
     padding: 2em 1.5em;
     border-radius: 8px;
@@ -25,11 +25,11 @@
     max-width: 90vw;
 }
 
-#login-modal h2, #register-modal h2 {
+#login-modal h2, #registerCliente-modal h2 {
     margin-top: 0;
 }
 
-#login-modal a, #register-modal a {
+#login-modal a, #registerCliente-modal a {
     color: #007bff;
     text-decoration: none;
     cursor: pointer;
@@ -47,16 +47,16 @@
     z-index: 10;
 }
 
-#login-modal > div, #register-modal > div {
+#login-modal > div, #registerCliente-modal > div {
     position: relative;
 }
 
-#login-modal label, #register-modal label {
+#login-modal label, #registerCliente-modal label {
     display: block;
     margin-bottom: 0.2em;
 }
 
-#login-modal input, #register-modal input {
+#login-modal input, #registerCliente-modal input {
     width: 100%;
     margin-bottom: 1em;
     padding: 0.5em;
@@ -66,13 +66,13 @@
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-#login-modal input:focus, #register-modal input:focus {
+#login-modal input:focus, #registerCliente-modal input:focus {
     border-color: orange;
     box-shadow: 0 0 6px 1px orange;
     outline: none;
 }
 
-#login-modal button, #register-modal button {
+#login-modal button, #registerCliente-modal button {
     width: 100%;
     padding: 0.7em;
     background: #E94F37;
@@ -86,6 +86,6 @@
     font-weight: bold;
 }
 
-#login-modal button:hover, #register-modal button:hover {
+#login-modal button:hover, #registerCliente-modal button:hover {
     background: #FF9933;
 }

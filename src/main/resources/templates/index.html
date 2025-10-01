@@ -19,7 +19,7 @@
                     <a href="javascript:void(0)" onclick="abrirModal('login-modal')">Iniciar Sesión</a>
                 </li>
                 <li th:if="${session.usuarioLogueado == null}">
-                    <a href="javascript:void(0)" onclick="abrirModal('register-modal')">Registrarse</a>
+                    <a href="javascript:void(0)" onclick="abrirModal('registerCliente-modal')">Registrarse</a>
                 </li>
 
                 <li th:if="${session.usuarioLogueado != null}">
