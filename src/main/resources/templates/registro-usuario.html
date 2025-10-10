@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="/css/modals.css">
 </head>
 <body>
+    <h1>ESTA VISTA ES TEMPORAL</h1>
+    <p>Solo esta como ventana para poder registrar los otros tipos de usuario</p>
     <a href="javascript:void(0)" onclick="abrirModal('registerCliente-modal')">Registrar Cliente</a>
-    <a href="javascript:void(0)" onclick="abrirModal('registerAdmin-modal')">Registrars Admin</a>
+    <a href="javascript:void(0)" onclick="abrirModal('registerAdmin-modal')">Registrar Admin</a>
+    <a href="javascript:void(0)" onclick="abrirModal('registerProveedor-modal')">Registrar Proveedor</a>
 
     <div th:replace="~{fragments/modals :: body}"></div>
     <script src="/js/modals.js"></script>

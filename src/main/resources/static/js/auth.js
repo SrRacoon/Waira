@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login-modal form");
     const registerClienteForm = document.querySelector("#registerCliente-modal form");
-    const registerAdminForm = document.querySelector("#registerAdminForm");
+    const registerAdminForm = document.querySelector("#registerAdmin-modal form");
+    const registerProveedorForm = document.querySelector("#registerProveedor-modal form");
 
     loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -9,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const formData = new FormData(loginForm);
         const payload = Object.fromEntries(formData.entries());
 
-        const response = await fetch("/api/login", {
+        const response = await fetch("/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const formData = new FormData(registerClienteForm);
         const payload = Object.fromEntries(formData.entries());
 
-        const response = await fetch("/api/register/cliente", {
+        const response = await fetch("/register/cliente", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
@@ -48,8 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
             registerError.textContent = data.error;
         }
     });
-
-    
 
     registerAdminForm.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -67,13 +66,47 @@ document.addEventListener("DOMContentLoaded", () => {
             permisos: permisos
         };
 
-        const response = await fetch("/api/register/admin", {
+        const response = await fetch("/register/admin", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
         });
 
         const registerError = document.getElementById("register-admin-error");
+
+        if (response.ok) {
+            const data = await response.json();
+            window.location.href = data.redirect;
+        } else {
+            const data = await response.json();
+            registerError.textContent = data.error;
+        }
+    });
+
+    registerProveedorForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(registerProveedorForm);
+
+        const payload = {
+            name: formData.get("name"),
+            surname: formData.get("surname"),
+            phone: formData.get("phone"),
+            email: formData.get("email"),
+            companyName: formData.get("companyName"),
+            nit: formData.get("nit"),
+            address: formData.get("address"),
+            password: formData.get("password"),
+            confirmPassword: formData.get("confirmPassword")
+        };
+
+        const response = await fetch("/register/proveedor", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        const registerError = document.getElementById("register-prov-error");
 
         if (response.ok) {
             const data = await response.json();

@@ -15,4 +15,9 @@ public class TemporalController {
     public String registroUsuario() {
         return "registro-usuario";
     }
+
+    @GetMapping("/registro-proveedor")
+    public String registroProveedor() {
+        return "temp-register-p";
+    }
 }

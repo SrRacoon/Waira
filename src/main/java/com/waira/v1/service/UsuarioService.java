@@ -123,7 +123,7 @@ public class UsuarioService {
         if (existente != null && existente.getEstadoCuenta()) {
             throw new IllegalArgumentException("El correo ya está registrado");
         }
-
+        
         if (existente != null && !existente.getEstadoCuenta() && existente.getRol() == Rol.ADMIN) {
             Admin adminExistente = (Admin) existente;
             adminExistente.setNombre(dto.getName());

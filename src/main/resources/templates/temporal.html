@@ -8,8 +8,10 @@
     <h1>Bienvenido</h1>
     <p th:text="'Usuario: ' + ${session.usuarioLogueado.nombre} + ' ' + ${session.usuarioLogueado.apellido}"></p>
     <p th:text="'Rol: ' + ${session.usuarioLogueado.rol}"></p>
+    
+    <a th:if="${session.rol == session.usuarioLogueado.rol}" th:href="@{/proveedor/dashboard}">Mi Dashboard</a>
     <a th:href="@{/}">Inicio</a>
-    <a th:href="@{/api/logout}">Cerrar sesión</a>
-    <a th:href="@{/api/delete-account(id=${session.usuarioLogueado.id})}">Eliminar cuenta</a>
+    <a th:href="@{/logout}">Cerrar sesión</a>
+    <a th:href="@{/delete-account(id=${session.usuarioLogueado.id})}">Eliminar cuenta</a>
 </body>
 </html>

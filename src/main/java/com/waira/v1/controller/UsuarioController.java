@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.waira.v1.dto.AdminRegisterDTO;
@@ -22,7 +21,6 @@ import com.waira.v1.service.UsuarioService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/api")
 public class UsuarioController {
 
     @Autowired
@@ -33,11 +31,13 @@ public class UsuarioController {
         try {
             Usuario usuarioLogueado = usuarioService.login(dto);
             session.setAttribute("usuarioLogueado", usuarioLogueado);
+            session.setAttribute("rol", usuarioLogueado.getRol());     
+        
 
             String redirect = "/";
             switch (usuarioLogueado.getRol()) {
                 case ADMIN -> redirect = "/temporal";
-                case PROVEEDOR -> redirect = "/temporal";
+                case PROVEEDOR -> redirect = "/proveedor/dashboard";
                 case CLIENTE -> redirect = "/temporal";
             }
 
@@ -94,7 +94,7 @@ public class UsuarioController {
                 Map.of(
                     "success", true,
                     "role", proveedorNuevo.getRol().name(),
-                    "redirect", "/temporal"
+                    "redirect", "/proveedor/dashboard"
                 )
             );
 
