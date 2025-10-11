@@ -1,34 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waira | Dashboard</title>
 </head>
 <body>
-    <nav></nav>
+    <nav>
+        <div>
+            <img class="logo-navbar" th:src="@{/imgs/Waira.svg}">
+        </div>
+        <ul>
+            <li>
+                <a th:href="@{/}">Inicio</a>
+            </li>
+            <li>
+                <a th:href="@{/logout}">Cerrar Sesión</a>
+            </li>
+        </ul>
+    </nav>
 
     <div>
-        <!--Sub-navbar-->
-        <div></div>
-        <!--Main content-->
+        <div>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Productos</a>
+            <a href="#pedidos">Pedidos</a>
+            <a href="#mensajes">Mensajes</a>
+            <a href="#perfil">Perfil</a>
+        </div>
+
         <div>
             <section id="inicio">
                 <h2>Inicio</h2>
             </section>
 
-            <section id="productos">
-                <h2>Productos</h2>
+            <section id="servicios">
+                <h2>Servicios</h2>
 
                 <div>
-                    <a href="/proveedor/productos/crear">Crear Producto</a>
+                    <a href="/servicios/crear">Crear Servicio</a>
                 </div>
 
                 <div>
                     <table>
                         <thead>
                             <tr>
-                                <th>Nombre</th>
+                                <th>Titulo Servicio</th>
                                 <th>Precio</th>
                                 <th>Stock</th>
                                 <th>Acciones</th>
